@@ -9,12 +9,15 @@ const textMaster = (str: string) => {
         switch (use) {
           case "vietnamese_Accent":
             txt = remove.removeVietnameseAccent(txt);
+            break;
           case "Space":
             txt = remove.removeSpace(txt);
+            break;
           case "Number":
             txt = remove.removeNumber(txt);
           case "Special_Characters":
             txt = remove.removeSpecialCharacters(txt);
+            break;
         }
       });
       return txt;

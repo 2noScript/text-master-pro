@@ -2,4 +2,6 @@ export type uses_hooks =
   | "removeVietnameseDiacritics"
   | "removeSpace"
   | "removeNumber"
-  | "removeSpecialCharacters";
+  | "removeSpecialCharacters"
+  | "toLowerCase"
+  | "toUpperCase";

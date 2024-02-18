@@ -1,22 +1,17 @@
 import { rm_hooks } from "./types/hooks";
-import * as remove from "./utils/remove";
+import * as use from "./utils/uses";
 
-const textMaster = (str: string) => {
+export const textMaster = (str: string) => {
   return {
-    remove: (use_list: rm_hooks[]) => {
+    uses: (use_list: rm_hooks[]) => {
       let txt = str;
-      use_list.forEach((use) => {
-        switch (use) {
-          case "vietnamese_Accent":
-            txt = remove.removeVietnameseAccent(txt);
-            break;
-          case "Space":
-            txt = remove.removeSpace(txt);
-            break;
-          case "Number":
-            txt = remove.removeNumber(txt);
-          case "Special_Characters":
-            txt = remove.removeSpecialCharacters(txt);
+      use_list.forEach((use_tag) => {
+        switch (use_tag) {
+          case "removeVietnameseDiacritics":
+          case "removeSpace":
+          case "removeNumber":
+          case "removeSpecialCharacters":
+            txt = use[use_tag](txt);
             break;
         }
       });
@@ -25,4 +20,6 @@ const textMaster = (str: string) => {
   };
 };
 
-export default textMaster;
+console.log(
+  textMaster("xin chào việt nam @@@@").uses(["removeVietnameseDiacritics"])
+);

@@ -11,6 +11,8 @@ export const textMaster = (str: string) => {
           case "removeSpace":
           case "removeNumber":
           case "removeSpecialCharacters":
+          case "toLowerCase":
+          case "toUpperCase":
             txt = use[use_tag](txt);
             break;
         }
@@ -19,3 +21,5 @@ export const textMaster = (str: string) => {
     },
   };
 };
+
+console.log(textMaster("B").uses(["toLowerCase"]));

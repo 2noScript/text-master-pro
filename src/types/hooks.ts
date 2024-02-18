@@ -1,4 +1,4 @@
-export type rm_hooks =
+export type uses_hooks =
   | "removeVietnameseDiacritics"
   | "removeSpace"
   | "removeNumber"

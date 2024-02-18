@@ -1,9 +1,9 @@
-import { rm_hooks } from "./types/hooks";
+import { uses_hooks } from "./types/hooks";
 import * as use from "./utils/uses";
 
 export const textMaster = (str: string) => {
   return {
-    uses: (use_list: rm_hooks[]) => {
+    uses: (use_list: uses_hooks[]) => {
       let txt = str;
       use_list.forEach((use_tag) => {
         switch (use_tag) {
@@ -19,7 +19,3 @@ export const textMaster = (str: string) => {
     },
   };
 };
-
-console.log(
-  textMaster("xin chào việt nam @@@@").uses(["removeVietnameseDiacritics"])
-);

@@ -22,4 +22,3 @@ export const textMaster = (str: string) => {
   };
 };
 
-console.log(textMaster("B").uses(["toLowerCase"]));
